@@ -1,0 +1,201 @@
+/* ========== ОСНОВНЫЕ НАСТРОЙКИ ========== */
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito SemiBold"),
+       url("/fonts/Nunito-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --main-bg-color: #F9F9F9;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background: var(--main-bg-color);
+  overflow: hidden;
+}
+
+.game-container {
+  max-width: 650px;
+  width: 100%;
+  max-height: 620px;
+  transform-origin: 0 0;
+  background: var(--main-bg-color);
+  user-select: none;
+
+  @media (min-width: 768px) {
+    max-width: 750px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 800px;
+  }
+}
+
+/* ========== GAME SCREEN / GAMEOVER SCREEN ========== */
+
+.game-screen, .game-over-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--main-bg-color);
+}
+
+.game-over-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.5);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ========== ТАЙМЕР ========== */
+
+.timer-wrapper {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Nunito", sans-serif;
+
+  @media (min-width: 500px) {
+    left: 28px;
+    transform: none;
+  }
+}
+
+.timer {
+  font-weight: 600;
+  font-size: 24px;
+  color: #262626;
+}
+
+/* ---- Бонус +3 секунды ---- */
+.time-plus {
+  font-size: 25px;
+  color: #7E28DF;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0) rotate(0deg);
+  transition: opacity 0.1s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* ========== СЧЕТЧИК ПАР (PAIR COUNTER) ========== */
+
+.pair-counter {
+  margin: 0;
+  width: 90%;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Nunito", sans-serif;
+  color: #262626;
+  font-weight: 600;
+  transition: transform 0.4s ease-in-out;
+}
+
+.game-screen .pair-counter {
+  margin-bottom: 30px;
+}
+
+.game-over-screen .pair-counter {
+  margin-bottom: 16px;
+}
+
+/* ========== КНОПКИ - ЭМОДЖИ ========== */
+
+.button-area {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.emoji-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 65px;
+  height: 65px;
+  font-size: 50px;
+  opacity: 0;
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transform: scale(0.2) rotate(1deg);
+  will-change: transform, opacity, border-color;
+  transition: border-color 0.1s ease;
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    width: 70px;
+    height: 70px;
+    font-size: 55px;
+  }
+}
+
+.emoji-button.highlight {
+  border-color: #7E28DF;
+}
+
+.emoji-button.match {
+  border-color: #08c04d;
+}
+
+/* ========== ПОДСКАЗКА ========== */
+
+.hint-button {
+  position: absolute;
+  right: 35%;
+  bottom: -65px;
+
+  padding: 0;
+  width: 100px;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: #A970F5;
+  text-align: center;
+  opacity: 0;
+  transform: scale(0.8);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  @media (min-width: 500px) {
+    right: 28px;
+    bottom: -45px;
+  }
+}
+
+/* ========== REPLAY ========== */
+
+.replay-button {
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  background: #A970F5;
+  border-radius: 50px;
+  border: 0;
+  cursor: pointer;
+}
+
