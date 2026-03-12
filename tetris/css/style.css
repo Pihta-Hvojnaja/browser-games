@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #111;
+}
+
+.arena {
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #fff;
+  background: #eee;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.score {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000;
+}
