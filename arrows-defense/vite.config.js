@@ -17,11 +17,11 @@ export default defineConfig((configEnv) => ({
    * viteSingleFile собирает все в один index.html
    */
   plugins: [
-    viteSingleFile(),
     linterPlugin({
       include: ['./js/**/*.js'],
       linters: [new EsLinter({ configEnv })]
-    })
+    }),
+    viteSingleFile(),
   ],
 
   /**
