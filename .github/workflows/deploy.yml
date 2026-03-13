@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]  # или ваша основная ветка
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20  # соответствует engines в package.json
+
+      - name: Build all games
+        run: |
+          # Создаём папку, куда сложим готовые файлы для публикации
+          mkdir -p public
+
+          # Перебираем все подпапки, содержащие package.json (игры)
+          for dir in */ ; do
+            if [ -f "${dir}package.json" ]; then
+              echo "📦 Building $dir"
+              cd "$dir"
+              npm ci                     # или npm install, если нет lock-файла
+              npm run build               # сборка Vite, результат появится в dist
+              # Копируем содержимое dist в public/<имя_папки_игры>
+              mkdir -p "../public/${dir%/}"
+              cp -r dist/* "../public/${dir%/}/"
+              cd ..
+            fi
+          done
+
+          # Если в корне есть собственный index.html (например, для списка игр) – тоже копируем
+          if [ -f "index.html" ]; then
+            cp index.html public/
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          
