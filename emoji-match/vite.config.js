@@ -21,7 +21,9 @@ export default defineConfig((configEnv) => ({
       include: ['./js/**/*.js'],
       linters: [new EsLinter({ configEnv })]
     }),
-    viteSingleFile(),
+    viteSingleFile({
+      deleteAssetFiles: true  // удалит .js и .css после инлайна
+    }),
   ],
 
   /**
