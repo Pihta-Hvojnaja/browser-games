@@ -1,28 +1,48 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: white;
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #F9F9F9;
 }
 
+.game-screen {
+  position: relative;
+}
+
 .arena {
   display: block;
   background: #fff;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.6);
 }
 
 .score {
-  margin-top: 10px;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  left: 0;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px #000;
+  color: #7d28df81;
+}
+
+.hint {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -75px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #B8B8B8;
+  text-align: center;
+
+  @media (min-width: 550px) {
+    right: -140px;
+    left: auto;
+    bottom: 0;
+    text-align: start;
+  }
 }
