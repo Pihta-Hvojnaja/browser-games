@@ -4,17 +4,19 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #111;
+  background-color: #F9F9F9;
 }
 
 .arena {
   display: block;
-  margin: 20px auto;
-  border: 2px solid #fff;
-  background: #eee;
+  background: #fff;
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 

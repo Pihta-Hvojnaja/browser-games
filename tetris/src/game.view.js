@@ -13,6 +13,7 @@ export const View = {
     '#3877FF' // T
   ],
   RECT_SIZE: 1,
+  BACKGROUND: '#FFF',
 
   /**
    * Отрисовка фигуры на канвасе
@@ -50,7 +51,7 @@ export const View = {
   drawFrame() {
     const {arenaMatrix, figureMatrix, figurePosition} = Play;
 
-    canvasContext.fillStyle = '#000';
+    canvasContext.fillStyle = this.BACKGROUND;
     canvasContext.fillRect(0, 0, canvas.width, canvas.height);
 
     // Рисуем арену
