@@ -1,3 +1,9 @@
-body {background:#000000;margin:0;padding:0}
+body {
+  margin: 0;
+  padding: 0;
+  background: #000000;
+}
 
-canvas {background:#ecf0f1;}
+.canvas {
+  background:#ecf0f1;
+}

@@ -5,13 +5,14 @@
 // ============================================================================
 
 // Размер игрового поля (в пикселях)
-var stage = {
+const stage = {
   w: 1280,
   h: 720
 };
 
 // Получаем элемент canvas и его контекст
-var _pexcanvas = document.getElementById('canvas');
+var _pexcanvas = document.querySelector('.arena');
+var canvas = document.querySelector('.arena');
 _pexcanvas.width = stage.w;
 _pexcanvas.height = stage.h;
 var ctx = _pexcanvas.getContext('2d');
