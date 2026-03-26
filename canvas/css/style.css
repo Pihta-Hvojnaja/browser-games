@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.arena {
+  background-color: #f9f9f9;
+  /* background: #ecf0f1; */
+  /* border: 2px solid rgb(1, 53, 1); */
+}
