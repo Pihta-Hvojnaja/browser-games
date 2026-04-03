@@ -6,7 +6,9 @@
   "private": true,
   "description": "Игра создана для комнаты ожидания overbooking",
   "devDependencies": {
+    "@types/node": "^25.5.2",
     "eslint": "8.48.0",
+    "typescript": "^6.0.2",
     "vite": "7.1.6",
     "vite-plugin-linter": "3.1.1",
     "vite-plugin-singlefile": "2.3.0"

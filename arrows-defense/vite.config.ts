@@ -1,4 +1,3 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import { EsLinter, linterPlugin } from 'vite-plugin-linter';
@@ -18,7 +17,7 @@ export default defineConfig((configEnv) => ({
    */
   plugins: [
     linterPlugin({
-      include: ['./js/**/*.js'],
+      include: ['./src/**/*.{js,ts}'],
       linters: [new EsLinter({ configEnv })]
     }),
     viteSingleFile(),

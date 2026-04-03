@@ -1,5 +1,4 @@
 import { Arena } from './game.arena';
-import { Figure } from './game.figure';
 import { GameLoop } from './game.game-loop';
 
 // ============================================================
